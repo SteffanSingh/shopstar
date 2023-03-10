@@ -11,10 +11,14 @@ import RegisterPage from './Pages/RegisterPage';
 import "./index.css"
 import LoginPage from './Pages/LoginPage';
 import { useSelector } from 'react-redux';
-import Favourite from './Pages/Favourite';
-import Cart from './Pages/Cart';
-
-
+import Favourite from './Pages/Favourite/Favourite';
+import Cart from './Pages/CartPage/Cart';
+import ElectronicsPage from './Pages/ElectronicsPage';
+import JeweleryPage from './Pages/JeweleryPage';
+import MenPage from './Pages/MenPage';
+import WomenPage from './Pages/WomenPage';
+import CartPage from './Pages/CartPage/CartPage';
+ 
 
 function App() {
 
@@ -27,9 +31,15 @@ function App() {
         <Route path="/" element={<HomePage/>} />
         <Route path="/products/details/:pid" element={<ProductDetailsPage/>} />
         <Route path="/Products" element={<ProductPage/>} />
+        <Route path="/electronics" element={<ElectronicsPage/>} />
+        <Route path="/jewelery" element={<JeweleryPage/>} />
+        <Route path="/men" element={<MenPage/>} />
+        <Route path="/women" element={<WomenPage/>} />
+
+        
         <Route path="/register" element={<RegisterPage/>} />
         <Route path="/login" element={<LoginPage/>} />
-        <Route path='cart' element={<Cart/>}/>
+        <Route path='cart' element={<CartPage/>}/>
         <Route path='favourite' element={<Favourite/>} />
 
 

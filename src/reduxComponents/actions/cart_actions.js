@@ -10,3 +10,22 @@ return{
 }
  
 }
+export const addFav=(product)=>{
+
+    
+    return{
+        type:ActionTypes.ADD_FAVOURITE,
+        payload:product
+    }
+     
+    }
+
+ export const deleteCart=(product)=>{
+    return{
+        type:ActionTypes.DELETE_CART,
+        payload:product
+    }
+ }
+
+
+  

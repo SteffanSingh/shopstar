@@ -13,6 +13,7 @@ code {
 }
 .card-margin{
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 .img-fluid{
   height: 30rem!important;
@@ -28,18 +29,21 @@ code {
 }
 
 #cart-item{
-  color: red;
-  margin-left: 600px;
-  margin-right: 100px;
+  color: rgb(135, 72, 72);
+  margin-left: 50px;
+  margin-right: 30px;
   text-decoration: none;
 }
 #cart-item:hover{
-  color: green;
+  color: green!important;
 }
 #logo{
 font-size:30px;
-color: red;
+color: rgb(151, 27, 135);
 
+}
+#logo:hover{
+  color: rgb(221, 152, 152);
 }
  #shop{
   color: blue;
@@ -59,3 +63,95 @@ text-decoration: none;
  #fav{
   color:red
  }
+ .nav-link:hover{
+  color:red
+ }
+ .btn{
+  margin-right: 10px;
+  margin-left: 10px;
+ }
+ #navs{
+  color:maroon;
+  font-size: 20px;
+  margin-right: 40px;
+ }
+ #navs:hover{
+  color:blue!important
+ }
+ .login-box{
+  color: red;
+  font-size: 50px;
+ }
+
+ .login-btn{
+  background-color: rgb(0, 119, 255);
+  color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border: none;
+
+  cursor: pointer;
+}
+.login-btn:hover{
+  color: red;
+}
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.login-input{
+  width: 200px;
+   margin-left: 550px;
+   margin-bottom: 20px;
+}
+.signup{
+  color: red;
+ }
+ .signup-block{
+  background-color: aliceblue;
+  padding-bottom: 100px;
+ }
+ .field{
+  margin: 5px;
+  padding: 2px;
+  width: 400px;
+ }
+ .signup-btn{
+  width: 200px;
+  background-color: yellow;
+  border: none;
+  border-radius: 2px;
+  color:blue
+ }
+ .login-input{
+  width: 400px;
+   margin-left: 450px;
+   margin-bottom: 20px;
+}
+a{
+  font-weight: bold;
+  cursor: pointer;
+  color: blue;
+  text-decoration: none!important;
+}
+
+a:hover{
+  color: red!important;
+}
+#cart-btn{
+  height: 40px;
+  width: 30px;
+}
+.order-summary{
+ background-color:rgb(185, 185, 209);
+   padding: 20px;
+  margin-top: 20px
+}
+#svg:hover{
+  color: red;
+  cursor: pointer;
+
+}
