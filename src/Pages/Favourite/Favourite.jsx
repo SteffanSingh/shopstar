@@ -22,13 +22,19 @@ const Favourite=()=>{
 
         </div> ) 
         :(
+            <>   
+            <div style={{ backgroundColor: "rgb(232, 232, 232", padding: "20px" }}>
+              
+      <h2 className="text-center">Your Favourite(<b style={{color:"red"}} >{numberFav} </b>items)</h2> 
+            
            <div className="container">
+
         <div className="row">
             {
                  favourite.map((item,index)=>
         <FavouritePage data={item} />
         ) }
-  </div> </div>)
+  </div> </div></div> </>  )
 }</div>
     )
 }
