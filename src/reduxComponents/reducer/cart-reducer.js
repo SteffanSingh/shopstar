@@ -16,6 +16,7 @@ export const CartReducer = (state = initialState, { type, payload }) => {
   console.log(state.numberCart);
 
   switch (type) {
+    
     case ActionTypes.ADD_FAVOURITE:
       {
         let {id,title,price,description,image}=payload;

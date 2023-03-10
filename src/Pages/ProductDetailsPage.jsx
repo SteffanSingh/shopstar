@@ -10,7 +10,9 @@ import { ActionTypes } from "../reduxComponents/constants/action_type";
 function ProductDetailsPage(){
 
     const {carts,numberCart,totalPrice,totalQuantity}=useSelector(state=>state)
+
 console.log(carts[1])
+
     const [products,setProducts]=useState([])
 
     const [changeButton,setChangeButton]=useState(false)
@@ -35,6 +37,7 @@ let dispatch=useDispatch();
 
 function productAdd(){
     console.log(addToCart(products))
+
  dispatch(addToCart(products))
 
  setChangeButton(!changeButton)
