@@ -18,15 +18,16 @@ export const CartReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     
     case ActionTypes.ADD_FAVOURITE:
+
       {
         let {id,title,price,description,image}=payload;
 
-        let item = {
+        /* let item = {
           ...payload,
           quantity: 1
         };
-      state.favourite.push(item);
-     /*  if (state.numberFav == 0) {
+      state.favourite.push(item); */
+       if (state.numberFav == 0) {
         let item = {
           ...payload,
           quantity: 1
@@ -48,7 +49,7 @@ export const CartReducer = (state = initialState, { type, payload }) => {
           };
           state.favourite.push(item1);
         }
-      } */
+      }  
 
 
       return {
@@ -80,7 +81,7 @@ export const CartReducer = (state = initialState, { type, payload }) => {
 
     case ActionTypes.ADD_CART:
       {
-let {id,title,price,description,image}=payload;
+     let {id,title,price,description,image}=payload;
 
 
         if (state.numberCart == 0) {

@@ -52,7 +52,7 @@ let total= 0 ;
                     
 
                     <div style={{ backgroundColor: "rgb(232, 232, 232", padding: "20px" }}>
-      <h2 className="text-center">Your Cart (<b style={{color:"red"}} >{numberCart} </b>items)</h2>
+      <h2 className="text-center">Your Cart (<b style={{color:"red"}} >{carts.length} </b>items)</h2>
       <table className="table">
         <thead>
           <tr>
@@ -118,7 +118,7 @@ let total= 0 ;
                 <h5 style={{"color":"red", backgroundColor:"rgb(191, 214, 157", height:"250px",width:"400px" ,
                         "border-radius":"5px", paddingTop:"20px"
                         }}><h3>Order Summary  </h3> 
-                          <h3>({numberCart} items)</h3>
+                          <h3>({carts.length} items)</h3>
                         
                           
                         <h3>Total Amount to Pay   :</h3> 
