@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ActionTypes } from "../../reduxComponents/constants/action_type";
 import NavBar from "../../Components/NavBar";
-import { addToCart } from "../../reduxComponents/actions/cart_actions";
+import { addToCart, deleteCart, removeFavourite } from "../../reduxComponents/actions/cart_actions";
 
 const FavouritePage=(props)=>{
 
@@ -17,6 +17,7 @@ const FavouritePage=(props)=>{
      function productAdd(){
         dispatch(addToCart(props.data))
       setChangeButton(!changeButton)
+      dispatch(deleteCart(props.data))
       
       }
 
@@ -24,6 +25,7 @@ const FavouritePage=(props)=>{
       
       function removeCart(){
         setChangeButton(!changeButton)
+        
       
         
       
@@ -35,6 +37,7 @@ const FavouritePage=(props)=>{
       function removeFav(){
       
         setChangeButton(!changeButton)
+        dispatch(removeFavourite(props.data))
         } 
        
       
@@ -64,13 +67,13 @@ const FavouritePage=(props)=>{
       <h5 class="card-title">{ title}</h5>
         
       <h5 class="card-title"style={{"color":"red"}} > $ { price}</h5>
-{ changeButton==false? ( 
+  
       <button onClick={productAdd} className="btn btn-primary btn-block">Add To Cart</button>
 
-):
- (<button onClick={removeCart} className="btn btn-primary btn-danger btn-block">Remove from Favourite</button>)
+ 
+  <button onClick={removeCart} className="btn btn-primary btn-danger btn-block">Remove from Favourite</button> 
 
-}
+ 
       
       
 

@@ -98,6 +98,7 @@ export const CartReducer = (state = initialState, { type, payload }) => {
               check = true;
             }
           });
+          
           if (!check) {
             let item1 = {
               ...payload,
@@ -105,18 +106,20 @@ export const CartReducer = (state = initialState, { type, payload }) => {
             };
             state.carts.push(item1);
           }
-        }         
+        }    
+             
       return {
         ...state,
         numberCart: state.numberCart + 1,
          
       }
-       
+
 
 
       
     };
     case ActionTypes.INCREASE_QUANTITY: 
+    let quantity = state.carts[payload].quantity;
           state.numberCart++;
           state.carts[payload].quantity++;
           
@@ -126,28 +129,77 @@ export const CartReducer = (state = initialState, { type, payload }) => {
 
 
     case ActionTypes.DECREASE_QUANTITY: 
-     let quantity = state.Carts[payload].quantity;
-    if (quantity > 1){
+     {
+      const index = state.carts.findIndex(
+        item =>item.id === payload.id
+
+      )
+
+      if (state.carts[index].quantity >1)
+
+          { 
+            state.carts[index].quantity -= 1
+          }
+          else if(state.carts[index].quantity == 1){
+            const nextItems = state.carts.filter((item)=>
+              item.id !== payload.id
+            );
+            state.carts = nextItems;
+          }
+
+        return{
+          ...state,
+          numberCart : state.numberCart -1 
+        }
+    //let {quantity} = state.carts[payload]?.quantity || 0;
+    /* let {quantity} = state.carts[payload] || {};
+
+    if (quantity > 0){
+      state.numberCart--;
+      state.carts[payload].quantity--;
+      return { ...state }
+    }
+     } */
+
+
+/* {
+     
+     state.carts.map((item, index) => {
+      if (item.id === payload.id) {
+        state.carts[index].quantity = state.numberCart; 
+        
+      }})
+    }
+
+     return {
+            ...state,
+            numberCart:state.numberCart-1 
+     } */
+    
+   /*  if (quantity > 1){
       state.numberCart--;
       state.carts[payload].quantity--;
       return { ...state
       }
     }
-    
+     */
+  }
     case ActionTypes.DELETE_CART: {
+
+      const {quantity}=state.carts[payload] || {}  // check if state.carts[payload] exists before destructuring
       return {
         ...state,
         numberCart: state.numberCart - quantity,
+        
         carts:state.carts.filter((item)=>{
-              return item.id !==state.carts[payload].id
+              return item.id !==state.carts[payload].id ?.id
         })
       }
 
     }
 
 
-
-    
+ 
     
     case ActionTypes.TOTAL_PRICE:{
       const {price, quantity }=state.carts.reduce((cartTotal,currentItem)=>{

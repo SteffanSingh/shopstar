@@ -8,8 +8,7 @@ const CartPage = () => {
       <>
         <NavBar />
         <br />
-        <div className="container"
-         >
+         
           <div className="row">
             <div className="col-md-12">
               <Cart/>
@@ -20,7 +19,7 @@ const CartPage = () => {
             <div className="col-md-4">
                
             </div>
-          </div>
+           
         </div>
       </>
     );

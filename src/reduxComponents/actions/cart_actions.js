@@ -10,6 +10,8 @@ return{
 }
  
 }
+
+
 export const addFav=(product)=>{
 
     
@@ -20,6 +22,13 @@ export const addFav=(product)=>{
      
     }
 
+    export const removeFavourite =(product)=>{
+        return{
+            type:ActionTypes.REMOVE_FAVOURITE,
+            payload:product
+        }
+    }
+    
  export const deleteCart=(product)=>{
     return{
         type:ActionTypes.DELETE_CART,
@@ -29,3 +38,9 @@ export const addFav=(product)=>{
 
 
   
+ export const decrease_quantity=(product)=>{
+        return {
+    type:ActionTypes.DECREASE_QUANTITY,
+    payload:product
+}
+ }
